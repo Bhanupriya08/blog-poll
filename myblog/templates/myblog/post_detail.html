@@ -16,15 +16,6 @@
         {% if post.image %}
             <img src="{{ post.image.url}}" height="250" width="400">
         {% endif %}
-        <form action="{% url 'myblog:vote' post.pk %}" method="post">
-            {% csrf_token %}
-            {% for choice in post.choice_set.all %}
-            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
-            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
-            {% endfor %}
-            <input type="submit" value="Done">
-        </form>
         
-
     </div>
 {% endblock %}

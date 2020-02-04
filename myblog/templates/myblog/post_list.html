@@ -11,12 +11,8 @@
             {% if post.image %}
             <p><img src="{{ post.image.url}}" height="250" width="400"></p>
             {% endif %}
-            <br>
-            <ul>
-            {% for choice in post.choice_set.all %}
-                <li>{{ choice.votes }} {{ choice.choice_text}}{{ choice.choice_text|pluralize  }} </li>
-            {% endfor %}
-            </ul>
+            
+            
         </div>
         
     {% endfor %}
